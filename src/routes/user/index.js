@@ -44,7 +44,7 @@ userRouter.post("/", (req, res) => {
 })
 userRouter.put("/", (req, res) => {
     const users = getUsers()
-    const index = users.map(x => x.id).indexOf(res.patam.id)
+    const index = users.map(x => x.id).indexOf(req.patam.id)
     if(idex === -1)
     return res.status(404).send('not found')
     else {
