@@ -1,8 +1,8 @@
 const express = require('express')
 
-
 const app = express()
-const userRouter = require('./src/routes/user')
+// app.use(express.json())
+const userRouter = require('./src/routes/user').default
 const cors = require('cors')
 
 app.get('/', async (req, res) => {
@@ -13,7 +13,7 @@ app.get('/', async (req, res) => {
 app.use(cors())
 app.use('/users', userRouter)
 
-app.listen(4000, () => console.log('The server is running on the port 4000'))
+app.listen(3001, () => console.log('The server is running on the port 3001'))
 
 
 // sudo pkill node
