@@ -1,8 +1,8 @@
 const express = require('express')
 
 const app = express()
-// app.use(express.json())
-const userRouter = require('./src/routes/user').default
+app.use(express.json())
+const userRouter = require('./src/routes/user')
 const cors = require('cors')
 
 app.get('/', async (req, res) => {

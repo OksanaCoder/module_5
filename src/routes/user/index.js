@@ -42,9 +42,9 @@ userRouter.post("/", (req, res) => {
     writeUsers(users)
     res.send(req.body)
 })
-userRouter.put("/", (req, res) => {
+userRouter.put("/:id", (req, res) => {
     const users = getUsers()
-    const index = users.map(x => x.id).indexOf(req.patam.id)
+    const index = users.map(x => x.id).indexOf(req.param.id)
     if(idex === -1)
     return res.status(404).send('not found')
     else {
